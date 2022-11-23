@@ -1,7 +1,9 @@
-import random, time
-from colorama import init, Fore
+import random
+import time
+
 from colorama import Back
 from colorama import Style
+from colorama import init, Fore
 
 init(autoreset=True)
 p50 = ['Попал ', 'Не попал']
@@ -12,13 +14,13 @@ gun = {
         {'name': 'p200', 'price': 300, 'damage': 34},
         {'name': 'tec9', 'price': 500, 'damage': 56},
         {'name': 'desert eagle', 'price': 700, 'damage': 100},
-        {'name': 'SSG 08','price':1700,'damage':80}
+        {'name': 'SSG 08', 'price': 1700, 'damage': 80}
     ],
     "ct": [
         {'name': 'p250', 'price': 300, 'damage': 20},
         {'name': 'Five-Seven', 'price': 350, 'damage': 60},
         {'name': 'R8', 'price': 600, 'damage': 89},
-    {'name': 'SSG 08','price':1700,'damage':80}
+        {'name': 'SSG 08', 'price': 1700, 'damage': 80}
     ]
 }
 
@@ -66,7 +68,7 @@ while t != 16 or ct != 16:
             for i in range(10, 0, -1):
                 time.sleep(1)
                 print(f'следущий раунд через {i} сек')
-            bal+=1700
+            bal += 1700
             continue
         else:
             print('Тебе нанесли ' + str(nanesli) + ' урона, твои хп  ' + str(hpchela))
@@ -78,7 +80,7 @@ while t != 16 or ct != 16:
             for i in range(10, 0, -1):
                 time.sleep(1)
                 print(f'следущий раунд через {i} сек')
-            bal+=1700
+            bal += 1700
             continue
 
         else:
