@@ -1,0 +1,10 @@
+# a = input('ЧИсла или строки')
+# b = list(a)
+# print('Английских ' + str(b.count('a')))
+# print('Руccких ' + str(b.count('а')))
+# print('Английских больших ' + str(b.count('A')))
+# print('Руccких больших ' + str(b.count('А')))
+while True:
+    a=(input('Числа или строки:\n'))
+    a=list(a)
+    print((list(reversed(a))))
