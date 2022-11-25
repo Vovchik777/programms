@@ -6,6 +6,8 @@ from colorama import Style
 from colorama import init, Fore
 
 init(autoreset=True)
+chel=''
+chel_hp=['Тот ','Тот ','Тот ','Тот ']
 p50 = ['Попал ', 'Не попал']
 uron = ['Нанесли ', 'Не нанесли']
 raskidka = ['Нанесли урон ', 'Не нанесли урон ', 'Не нанесли урон ', 'Не нанесли урон ', 'Не нанесли урон ']
@@ -26,24 +28,46 @@ gun = {
 
 t = 0
 ct = 0
-vib = input('За кого играешь:t,ct').strip()
+svet=["Red","Blue","Yellow"]
+vib = input('За кого играешь:'+Fore.RED+'t'+Fore.BLUE+',ct').strip()
 bal = 800
+inventory=[]
 while t != 16 or ct != 16:
-    hpchela = 1
+    hpchela = 100
     max_name = 0
     for g in gun[vib]:
         if max_name < len(g['name']):
             max_name = len(g['name'])
     max_name += 3
-    print(Back.BLACK + Fore.MAGENTA + 'Что покупаешь?:' + Style.RESET_ALL)
-    for i, g in enumerate(gun[vib]):
-        print(f"{(i + 1): >2} {g['name']:_<{max_name}} | {g['price']:^10} | {g['damage']:^10} |")
-    pok = int(input()) - 1
-    if bal < gun[vib][pok]['price']:
-        print('Не хватает денег')
-        continue
-    bal -= gun[vib][pok]['price']
-    print(bal)
+    if inventory == []:
+        print(bal)
+        print(Back.BLACK + Fore.MAGENTA + 'Что покупаешь?:' + Style.RESET_ALL)
+        for i, g in enumerate(gun[vib]):
+            print(f"{(i + 1): >2} {g['name']:_<{max_name}} | {g['price']:^10} | {g['damage']:^10} |")
+        pok = int(input()) - 1
+        if bal < gun[vib][pok]['price']:
+            print('Не хватает денег')
+            continue
+        bal -= gun[vib][pok]['price']
+        print(bal)
+        inventory.append(gun[vib][pok]['name'])
+    else:
+        pokupka=input('У тебя в инвентаре есть:'+Fore.RED+str(inventory)+Style.RESET_ALL+"Хочешь заменить???")
+        if pokupka == 'da':
+            print(bal)
+            print(Back.BLACK + Fore.MAGENTA + 'Что покупаешь?:' + Style.RESET_ALL)
+            for i, g in enumerate(gun[vib]):
+                print(f"{(i + 1): >2} {g['name']:_<{max_name}} | {g['price']:^10} | {g['damage']:^10} |")
+            pok = int(input()) - 1
+            inventory.clear()
+            inventory.append(gun[vib][pok]['name'])
+            print('Теперь у тебя '+str(inventory))
+            if bal < gun[vib][pok]['price']:
+                print('Не хватает денег')
+                continue
+            else:
+                bal -= gun[vib][pok]['price']
+                print(bal)
     time.sleep(1)
     print('Начало раунда')
     time.sleep(2.5)
@@ -57,6 +81,8 @@ while t != 16 or ct != 16:
     elif b == 'Попал ' and gun[vib][pok]['damage'] < 100:
         print('Попал')
         print('У него осталось ' + str(100 - gun[vib][pok]['damage']) + ' хп')
+        hp_vraga=100-gun[vib][pok]['damage']
+        chel='Попадание'
     else:
         print('Не попал')
         # hp = random.choice(uron)
@@ -64,11 +90,27 @@ while t != 16 or ct != 16:
         nanesli = random.randint(1, 100)
         hpchela -= nanesli
         if hpchela <= 0:
-            print('Тебя убили ')
+            time.sleep(1.5)
+            print(Back.BLACK+Fore.RED+'Тебя '+Fore.LIGHTRED_EX+'убили ')
             for i in range(10, 0, -1):
                 time.sleep(1)
-                print(f'следущий раунд через {i} сек')
+                x=random.choice(svet)
+                if x == "Yellow":
+                    print(Fore.YELLOW+f'следущий раунд через {i} сек')
+                elif x == "Blue":
+                    print(Fore.BLUE + f'следущий раунд через {i} сек')
+                else:
+                    print(Fore.RED + f'следущий раунд через {i} сек')
             bal += 1700
+            print(bal)
+            pok=''
+            inventory.clear()
+            if vib == 't':
+                ct+=1
+                print('У контр-терроров '+str(ct)+' очков!')
+            else:
+                t+=1
+                print('У терроров ' + str(t) + ' очков!')
             continue
         else:
             print('Тебе нанесли ' + str(nanesli) + ' урона, твои хп  ' + str(hpchela))
@@ -76,14 +118,42 @@ while t != 16 or ct != 16:
     if rask == 'Нанесли урон ':
         hpchela -= random.randint(1, hpchela)
         if hpchela <= 0:
-            print('Тебя убили раскидкой, ')
+            time.sleep(1.5)
+            print(Back.BLACK+Fore.RED+'Тебя'+Fore.LIGHTRED_EX+' убили'+Fore.RED+' раскидкой, ')
             for i in range(10, 0, -1):
                 time.sleep(1)
-                print(f'следущий раунд через {i} сек')
+                x = random.choice(svet)
+                if x == "Yellow":
+                    print(Fore.YELLOW + f'следущий раунд через {i} сек')
+                elif x == "Blue":
+                    print(Fore.BLUE + f'следущий раунд через {i} сек')
+                else:
+                    print(Fore.RED + f'следущий раунд через {i} сек')
             bal += 1700
-            continue
+            print(bal)
+            pok=''
+            inventory.clear()
 
+            if vib == 't':
+                ct+=1
+                print('У контр-терроров '+str(ct)+' очков!')
+            else:
+                t+=1
+                print('У терроров ' + str(t) + ' очков!')
+            continue
         else:
+            time.sleep(1.5)
             print('По тебе попали раскидкой, твои хп - ' + str(hpchela))
     else:
+        time.sleep(1.5)
         print('Тебе повезло по тебе не попали раскидкой!')
+    urn=input('Завершить игру?:\n')
+    if urn == 'да':
+        exit()
+    if chel == 'Попадание':
+        chel1=random.choice(chel_hp)
+        if chel1 == 'Тот ':
+            print('Выстрел')
+            time.sleep(2)
+            print('Это тот чувак , у него '+str(hp_vraga)+' хп')
+

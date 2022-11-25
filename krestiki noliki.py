@@ -2,7 +2,7 @@ from colorama import init, Fore
 from colorama import Back
 from colorama import Style
 
-init(autoreset=True)
+init(autoreset=False)
 count = 0
 pole = [Fore.LIGHTBLACK_EX + '0', Fore.LIGHTBLACK_EX + '1', Fore.LIGHTBLACK_EX + '2', Fore.LIGHTBLACK_EX + '3',
         Fore.LIGHTBLACK_EX + '4', Fore.LIGHTBLACK_EX + '5', Fore.LIGHTBLACK_EX + '6', Fore.LIGHTBLACK_EX + '7',

@@ -18,7 +18,7 @@ elif a == "-chs":
     print("Otvet"+ str(-b) +"i"+ str(-c)+"a ti, loh ne poshital")
 elif a == "pi":
     import math
-    print("uchi mateshu chiclo pi rovno"+math.pi)
+    print("uchi mateshu chiclo pi rovno "+str(math.pi))
 elif a =="okr":
     import math
     print("otvet", math.floor(b),math.floor(c),)

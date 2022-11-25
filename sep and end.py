@@ -1,2 +1,2 @@
-print(' sep , это , sep ', end='')
-print('проверка работы end')
+print(' sep , это , sep ')
+print('проверка работы end', sep='')

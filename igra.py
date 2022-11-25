@@ -17,9 +17,9 @@ while len(igr1) < 10 or len(igr2) < 10:
     print(Style.RESET_ALL)
     br = input('Введите * чтобы начать:\n')
     if br == '*':
-        b1 = randint(1, 10)
+        b1 = randint(1, 12)
         print(Fore.BLUE +str(b1))
-        b2 = randint(1, 10)
+        b2 = randint(1, 12)
         print( Fore.RED +str(b2))
         if b1 > b2:
             igr1 += '🐞'
