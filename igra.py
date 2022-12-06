@@ -33,9 +33,9 @@ while len(igr1) < 10 or len(igr2) < 10:
     count=0
     if len(igr2) >= 10 or len(igr1) >= 10:
         if len(igr1) > len(igr2):
-            print('ВЫИГРАЛ ИГРОК ' + name1)
+            print('ВЫИГРАЛ ИГРОК ' + name1.upper())
         elif len(igr2) > len(igr1):
-            print('ВЫИГРАЛ ИГРОК ' + name2)
+            print('ВЫИГРАЛ ИГРОК ' + name2.upper())
         break
     elif br == 'stop':
         for i in range(randint(1,100)):
