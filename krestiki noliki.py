@@ -7,8 +7,8 @@ count = 0
 pole = [Fore.LIGHTBLACK_EX + '0', Fore.LIGHTBLACK_EX + '1', Fore.LIGHTBLACK_EX + '2', Fore.LIGHTBLACK_EX + '3',
         Fore.LIGHTBLACK_EX + '4', Fore.LIGHTBLACK_EX + '5', Fore.LIGHTBLACK_EX + '6', Fore.LIGHTBLACK_EX + '7',
         Fore.LIGHTBLACK_EX + '8']
-name0=input('Кто играет за 0:\n')
 namex=input('Кто играет за X:\n')
+name0=input('Кто играет за 0:\n')
 gameover = False
 playertek = "X"
 print(f' {pole[0]} │ {pole[1]} │ {pole[2]} \n'

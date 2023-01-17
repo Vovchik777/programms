@@ -2,7 +2,7 @@ import time
 import mouse,keyboard
 import subprocess
 
-import win32gui
+import win32gui,pyautogui
 
 # mouse.click('right')
 # subprocess.Popen('calc')
@@ -37,9 +37,10 @@ keyboard.send('alt+F4')
 time.sleep(1.5)
 mouse.move(1179, 2)
 mouse.click('left')
-mouse.move(559, 753,duration=0.1)
+# mouse.move(559, 753,duration=0.1)
+c = pyautogui.locateOnScreen('etr.png')
 time.sleep(1.5)
-mouse.double_click('left')
+pyautogui.click(c)
 time.sleep(0.5)
 keyboard.send('enter')
 keyboard.send('UP')

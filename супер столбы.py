@@ -4,7 +4,7 @@ from colorama import *
 slovo = []
 lava = []
 while True:
-    def color(list,list1):
+    def you(list, list1):
         if list in list1:
             print('│←ты')
             for i in list:
@@ -25,7 +25,7 @@ while True:
 
 
     svet = input('Цвет:\n')
-    color(svet,colors)
+    you(svet, colors)
     perebor(svet)
     start = time.time()
     while svet not in colors:
@@ -38,7 +38,7 @@ while True:
     #color(list = svet,list1= colors)
         perebor(svet)
     svet1 = list(svet)
-    ind = random.randint(1,len(svet1)-2)
+    ind = random.randint(1,len(svet1))
     print(Fore.MAGENTA+'¯'*100+Style.RESET_ALL)
     for i in range(-ind,0):
         svet1[i] = Back.RED+Fore.RED+'*'+Back.RESET+'←Лава'+Style.RESET_ALL
@@ -60,5 +60,7 @@ while True:
     print('│←ты')
     for i in slovo:
         print(i)
+
     for r in lava:
         print(r)
+    print(slovo)

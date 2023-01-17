@@ -123,7 +123,7 @@ while t != 16 or ct != 16:
         hpchela -= random.randint(1, hpchela)
         if hpchela <= 0:
             time.sleep(1.5)
-            print(Back.BLACK+Fore.RED+'Тебя'+Fore.LIGHTRED_EX+' убили'+Fore.RED+' раскидкой, ')
+            print(Back.BLACK+Fore.RED+'Тебя'+Fore.LIGHTRED_EX+' убили'+Fore.RED+' раскидкой')
             for i in range(10, 0, -1):
                 time.sleep(1)
                 x = random.choice(svet)
