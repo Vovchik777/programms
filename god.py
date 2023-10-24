@@ -7,9 +7,9 @@ while True:
     god = den.year+1
     newyer = datetime(god,1,1)
     print('До Нового Года:',newyer-den,end = "")
-    t.sleep(0.01)
+    t.sleep(1)
     print('\r\r',end='')
-
+    print(type(den))
 # print(den.date())
 # den2 = den.date
 # print(timedelta())

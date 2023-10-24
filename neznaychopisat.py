@@ -2,7 +2,7 @@ import smtplib
 import os
 def send_email(message):
     sender = "romakibasov@gmail.com"
-    password = "20007584757"
+    password = "#########"
 
     server = smtplib.SMTP("smtp.gmail.com",587)
     server.starttls()

@@ -14,4 +14,4 @@ while True:
     if iscl:
         mouse.double_click('left')
         #keyboard.send('space')
-        time.sleep(0.3)
+        time.sleep(0.1)

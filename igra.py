@@ -27,7 +27,7 @@ while len(igr1) < 10 or len(igr2) < 10:
             igr2 += '🐞'
         else:
             print('Перебросьте кубик')
-        print('количество баллов у игрока  ' + name1 + Back.BLACK + Fore.BLUE + str(igr1), Fore.BLUE + str(len(igr1)))
+        print('количество баллов у игрока ' + name1 + Back.BLACK + Fore.BLUE + str(igr1), Fore.BLUE + str(len(igr1)))
         print('количество баллов у игрока ' + name2 + Back.BLACK + Fore.RED + str(igr2), Fore.RED + str(len(igr2)))
 
     count=0

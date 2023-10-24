@@ -5,6 +5,7 @@ if P=="Programma123":
     p=float(input("Prozent?"))
     n=float(input("Vremya?"))
     s=d*(1+0.01*p)**n
-    print(str(s))
+    print(int(s))
+    print('vi poluchite',int(s-d),'deneg')
 else :
     print("Parol ne vernii")
